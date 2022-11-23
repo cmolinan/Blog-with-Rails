@@ -2,12 +2,21 @@
 
 This Blog app is a fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
+## Built With
+- Ruby on Rails
 
-## Getting Started
+## Setup
 
-To get a local copy up and running follow these simple steps.
-git clone https://github.com/cmolinan/Blog-with-Rails in your terminal
+To get a local copy up and running, follow these simple steps:
 
+- git clone https://github.com/cmolinan/Blog-with-Rails in your terminal
+
+- After opening the folder in Visual Studio Code, open the terminal and run the following commands:
+> bundle install
+
+> rails s
+
+- Then, in your browser go to this URL: http://localhost:3000/
 
 ## Author
 
