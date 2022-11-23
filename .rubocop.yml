@@ -8,7 +8,7 @@ AllCops:
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 120
+  Max: 200
 Metrics/MethodLength:
   Max: 50
 Metrics/AbcSize:
@@ -16,8 +16,8 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  AllowedMethods: ['describe']
-  Max: 30
+  AllowedMethods: ['describe','schema.rb' ]
+  Max: 50
 Metrics/CyclomaticComplexity:
   Max: 12
 Metrics/PerceivedComplexity:
