@@ -1,6 +1,6 @@
 class Like < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: 'users_id'
-  belongs_to :post, foreign_key: 'posts_id'
+  belongs_to :author, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :post, foreign_key: 'post_id'
 
   # method that updates the likes counter for a post (using increment!)
   def update_likes_counter(post_id)
