@@ -6,7 +6,7 @@ RSpec.describe Comment, type: :model do
     it { should belong_to(:post) }
   end
 
-  context 'Testing the comment counter' do
+  context 'Testing the comment model' do
     subject do
       @user01 = User.new(name: 'Mark', photo: 'https://image.com/01.jpg', bio: 'Born in USA', posts_counter: 0)
       Post.new(author: @user01, title: 'Hello Mark', text: 'What about you ?', comments_counter: 1)
