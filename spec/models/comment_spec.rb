@@ -8,8 +8,8 @@ RSpec.describe Comment, type: :model do
 
   context 'Testing the comment model' do
     subject do
-      @user01 = User.new(name: 'Mark', photo: 'https://image.com/01.jpg', bio: 'Born in USA', posts_counter: 0)
-      @post01 = Post.new(author: @user01, title: 'Hello Mark', text: 'What about you ?', comments_counter: 1)
+      @user01 = User.new(name: 'Mark', photo: 'https://image.com/01.jpg', bio: 'Born in USA')
+      @post01 = Post.new(author: @user01, title: 'Hello Mark', text: 'What about you ?')
       Comment.new(author: @user01, post: @post01, text: 'Now working in dev')
     end
 
