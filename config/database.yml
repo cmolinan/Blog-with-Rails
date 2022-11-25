@@ -13,7 +13,10 @@ development:
 
 test:
   <<: *default
-  database: Blog_with_Rails_test
+  database: Blog_with_Rails_development
+  username: postgres
+  password: carloss
+
 
 production:
   <<: *default
