@@ -9,26 +9,16 @@ RSpec.describe Comment, type: :model do
   context 'Testing the comment model' do
     subject do
       @user01 = User.new(name: 'Mark', photo: 'https://image.com/01.jpg', bio: 'Born in USA', posts_counter: 0)
-      Post.new(author: @user01, title: 'Hello Mark', text: 'What about you ?', comments_counter: 1)
+      @post01 = Post.new(author: @user01, title: 'Hello Mark', text: 'What about you ?', comments_counter: 1)
+      Comment.new(author: @user01, post: @post01, text: 'Now working in dev')
     end
 
     it 'is valid with valid attributes' do
       expect(subject).to be_valid
     end
 
-    it 'is not valid without a title' do
-      subject.title = nil
-      expect(subject).to_not be_valid
-    end
-
-    it 'is not valid without comments_counter' do
-      subject.comments_counter = nil
-      expect(subject).to_not be_valid
-    end
-
-    it 'should return the number of comments' do
-      subject.comments.new(author: @user01, text: 'Fine. Working at all')
-      expect(subject.comments_counter).to eql 1
+    it 'update_comments_counter' do
+      expect(subject).to respond_to(:update_comments_counter)
     end
   end
 end

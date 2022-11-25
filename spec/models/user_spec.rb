@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
       expect(subject).to_not be_valid
     end
 
-    it 'is not valid is post counter is negative' do
+    it 'is not valid if post counter is negative' do
       subject.posts_counter = -1
       expect(subject).to_not be_valid
     end
