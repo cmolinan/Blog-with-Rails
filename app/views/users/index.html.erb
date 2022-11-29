@@ -1,0 +1,6 @@
+<h1>Users#index</h1>
+<h2>Show All users: </h2>
+
+<% @users.each do |user| %>
+    <h4>Id: <%= user.id %>, Name: <%= user.name %>, Bio: <%= user.bio %></h4>
+<% end %>
