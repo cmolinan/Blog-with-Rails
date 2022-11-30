@@ -1,6 +1,19 @@
-<h1>Users#index</h1>
-<h2>Show All users: </h2>
+<h1>Users List: </h1>
+
 
 <% @users.each do |user| %>
-    <h4>Id: <%= user.id %>, Name: <%= user.name %>, Bio: <%= user.bio %></h4>
-<% end %>
+
+  <div class='user_box' >
+    <div class='user_photo'>        
+        <%= image_tag( 'user.png', size: "50x50", :alt => 'User: ' + user.name.to_s  ) -%>
+    </div>
+    <div class='user_namePost'>
+        <div class='user_name'>
+        <h1><%= link_to user.name, user %></h1>
+        </div>
+        <div class="user_numOfPosts"
+         <p>Number of posts: <%= user.posts_counter %></p>
+        </div>
+    </div>
+  </div>
+  <% end %>
