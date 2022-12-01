@@ -1,5 +1,27 @@
-<h1>All posts for User #<%= @user %></h1>
+<%= render partial: "shared/user", locals: {user: @user } %>
 
-<% @posts.each do |post| %>
-    <h3>Id: <%= post.id %>, Title: <%= post.title %>, Text: <%= post.text %>, Created at: <%= post.created_at %></h3>
+<% if false %>
+    <% @posts.each do |post| %>
+        <h3>Id: <%= post.id %>, Title: <%= post.title %>, Text: <%= post.text %>, Created at: <%= post.created_at %></h3>
+    <% end %>
 <% end %>
+
+<% @posts.each_with_index do |post, index| %>
+    <%= render partial: "shared/post", locals: {post: post, index: index } %>  
+
+    <div class='div-comments'>
+    <% post.five_recent_comments(post.id).each_with_index do |comment, index| %>
+       <div class='comments'>
+          <span style="font-weight :bold font-size: 10px">Username <%= comment.user_id %>:</span> <%= comment.text %>
+        </div>
+    <% end %>        
+    </div>
+          
+<% end %>
+
+<div class='user_button'>
+  <button>
+    <%= link_to 'Pagination', user_post_path(@user, @posts[0]) %>
+  </button>
+</div>
+  

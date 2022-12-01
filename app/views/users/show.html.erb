@@ -1,2 +1,28 @@
-<h1>Users#show</h1>
-<h3>Show User Info: <%= @user.id %>, Name: <%= @user.name %>, Bio: <%= @user.bio %></h3>
+
+<%= render partial: "shared/user", locals: {user: @user } %>
+
+<div class='user_bio' >
+  <b>Bio</b>
+  <div>
+    <p><%= @user.bio %></p>
+  </div>
+</div>
+
+
+<% @user.three_recent_posts(@user.id).each_with_index do |post, index| %>
+  <%= render partial: "shared/post", locals: {post: post, index: index } %>  
+<% end %>
+
+<div class='user_button'>
+  <button>
+    <%= link_to 'See all posts', user_posts_path(@user) %>
+  </button>
+</div>
+
+<% if false %>
+<% end %>
+
+
+
+
+
