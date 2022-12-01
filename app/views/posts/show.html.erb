@@ -1,7 +1,14 @@
-<div class="user_bio"
-  <b>Post by <%= @user.name %></b>
-  <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </p>
-  <p>Title: <%= @post.title %></p>
+<div class="post_header">
+  <div class="post-show-header">
+    <div class="ps-name">
+      Post by <%= @user.name %>
+    </div>
+    <div class="ps-counters">
+      Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
+    </div>
+  </div>
+
+  <p><%= @post.title %></p>
   <p><%= @post.text %></p>  
 </div>
 
