@@ -56,6 +56,14 @@ html {
   align-items: center;
 }
 
+.user_bio {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 1px solid black;
+  font-size: 14px;
+}
+
 .user_photo {
   flex: 1;
   border: 1px solid black;

@@ -1,2 +1,33 @@
-<h1>Users#show</h1>
-<h3>Show User Info: <%= @user.id %>, Name: <%= @user.name %>, Bio: <%= @user.bio %></h3>
+
+<%= render partial: "shared/user", locals: {user: @user } %>
+
+<div class='user_bio' >
+  <b>Bio</b>
+  <div>
+    <p><%= @user.bio %></p>
+  </div>
+</div>
+
+
+<% @user.three_recent_posts(@user.id).each do |post| %>
+  <div class="user_bio"
+    <b>Post #<%= post.id %>: <%= post.title %></b>
+    <p><%= post.text %></p>
+    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+  </div>
+<% end %>
+
+<% if false %>
+<% @posts.each do |post| %>
+  <div class="user_bio"
+    <b>Post #<%= post.id %>: <%= post.title %></b>
+    <p><%= post.text %></p>
+    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+  </div>
+<% end %>
+<% end %>
+
+
+
+
+
