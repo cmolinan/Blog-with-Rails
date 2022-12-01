@@ -9,22 +9,17 @@
 </div>
 
 
-<% @user.three_recent_posts(@user.id).each do |post| %>
-  <div class="user_bio"
-    <b>Post #<%= post.id %>: <%= post.title %></b>
-    <p><%= post.text %></p>
-    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
-  </div>
+<% @user.three_recent_posts(@user.id).each_with_index do |post, index| %>
+  <%= render partial: "shared/post", locals: {post: post, index: index } %>  
 <% end %>
 
+<div class='user_button'>
+  <button>
+    <%= link_to 'See all posts', user_posts_path(@user) %>
+  </button>
+</div>
+
 <% if false %>
-<% @posts.each do |post| %>
-  <div class="user_bio"
-    <b>Post #<%= post.id %>: <%= post.title %></b>
-    <p><%= post.text %></p>
-    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
-  </div>
-<% end %>
 <% end %>
 
 
