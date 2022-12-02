@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  def index    
+  def index
     @user = User.find_by!(id: params[:user_id])
     @posts = Post.where(user_id: params[:user_id])
   end
@@ -11,18 +11,17 @@ class PostsController < ApplicationController
 
   def new
     @user = User.find_by!(id: params[:user_id])
-    @new_post = Post.new    
+    @new_post = Post.new
   end
 
   def create
     current_user = User.find_by!(id: params[:user_id])
-    post = Post.new(author: current_user, title: params[:post][:title], text: params[:post][:text] )  
+    post = Post.new(author: current_user, title: params[:post][:title], text: params[:post][:text])
 
-    if post.save      
+    if post.save
       redirect_to user_posts_url
     else
-      redirect_to  new_user_post_url
+      redirect_to new_user_post_url
     end
   end
-  
 end
