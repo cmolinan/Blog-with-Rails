@@ -12,11 +12,20 @@
   <p><%= @post.text %></p>  
 </div>
 
+<%= form_with model: @like, url: user_post_likes_path(@user, @post) do |form| %>
+  <div>
+    <%= form.button "Add a like !", type: "submit" %>
+  </div>
+<% end %>
+
 <div class='div-comments'>
   <% @post.five_recent_comments(@post.id).each do |comment| %>
      <div class='comments'>
-        <span style="font-weight :bold font-size: 10px">Username <%= comment.user_id %>:</span> <%= comment.text %>
+        Username <%= comment.user_id %>: <%= comment.text %>
       </div>
   <% end %>        
 </div>
-        
+
+<button>
+  <%= link_to 'Add a Comment', new_user_post_comment_path(@user, @post) %>
+</button>
