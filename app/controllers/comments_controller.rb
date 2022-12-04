@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
+  before_action :set_new, only: [:new] 
+
   def new
     @comment = Comment.new
-    @post = Post.find_by!(id: params[:post_id])
-    @user = User.find_by!(id: params[:user_id])
   end
 
   def create
@@ -16,4 +16,11 @@ class CommentsController < ApplicationController
       redirect_to new_user_post_comment_url
     end
   end
+
+  private
+  def set_new
+    @post = Post.find_by!(id: params[:post_id])
+    @user = User.find_by!(id: params[:user_id])
+  end
+
 end
