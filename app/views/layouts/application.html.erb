@@ -11,9 +11,14 @@
   </head>
 
   <body>
+    
     <div class='common_header'>
       <p>CARLOS MOLINA'S BLOG </p>
     </div>
+    
+    <% flash.each do |key, value| %>
+      <span class='flash_<%= key %>'><%= value %></span>
+    <% end %> 
 
     <%= yield %>
 

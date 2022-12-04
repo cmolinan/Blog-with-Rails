@@ -160,3 +160,15 @@ html {
   padding-right: 1%;
   vertical-align: bottom;
 }
+
+.flash_notice {
+  border: 1px solid black;
+  background-color: green;
+  color: white;
+}
+
+.flash_alert {
+  border: 1px solid black;
+  background-color: red;
+  color: white;
+}

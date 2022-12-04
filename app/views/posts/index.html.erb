@@ -1,17 +1,10 @@
 <%= render partial: "shared/user", locals: {user: @user } %>
 
-<% if false %>
-    <% @posts.each do |post| %>
-        <h3>Id: <%= post.id %>, Title: <%= post.title %>, Text: <%= post.text %>, Created at: <%= post.created_at %></h3>
-    <% end %>
-<% end %>
-
 <% @posts.each_with_index do |post, index| %>
     <%= render partial: "shared/post", locals: {post: post, index: index } %>  
 
     <%= render partial: "shared/comments", locals: {post: post, index: index } %>  
-
-    <% end %>
+<% end %>
 
 <div class='user_button'>
   <button>
@@ -20,3 +13,6 @@
 </div>
 
 <%= link_to 'Back' , @user %>
+
+<% if false %>    
+<% end %>
