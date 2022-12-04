@@ -18,13 +18,7 @@
   </div>
 <% end %>
 
-<div class='div-comments'>
-  <% @post.five_recent_comments(@post.id).each do |comment| %>
-     <div class='comments'>
-        Username <%= comment.user_id %>: <%= comment.text %>
-      </div>
-  <% end %>        
-</div>
+<%= render partial: "shared/comments", locals: {post: @post } %>
 
 <button>
   <%= link_to 'Add a Comment', new_user_post_comment_path(@user, @post) %>

@@ -9,15 +9,9 @@
 <% @posts.each_with_index do |post, index| %>
     <%= render partial: "shared/post", locals: {post: post, index: index } %>  
 
-    <div class='div-comments'>
-    <% post.five_recent_comments(post.id).each_with_index do |comment, index| %>
-       <div class='comments'>
-          <span style="font-weight :bold font-size: 10px">Username <%= comment.user_id %>:</span> <%= comment.text %>
-        </div>
-    <% end %>        
-    </div>
-          
-<% end %>
+    <%= render partial: "shared/comments", locals: {post: post, index: index } %>  
+
+    <% end %>
 
 <div class='user_button'>
   <button>
