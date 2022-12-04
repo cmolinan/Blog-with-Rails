@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.all
-  end
+  before_action :set_vars, only: %i[show index]
 
-  def show
-    @user = User.find_by!(id: params[:id])
-    @posts = Post.where(user_id: @user)
+  def index; end
+
+  def show; end
+
+  private
+
+  def set_vars
+    @user = User.find(params[:id]) if params[:id]
+    @posts = Post.where(user_id: @user) if @user
+    @users = User.all
   end
 end

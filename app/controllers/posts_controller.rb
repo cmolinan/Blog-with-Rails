@@ -1,27 +1,35 @@
 class PostsController < ApplicationController
-  def index
-    @user = User.find_by!(id: params[:user_id])
-    @posts = Post.where(user_id: params[:user_id])
-  end
+  before_action :set_vars, only: %i[show index new]
 
-  def show
-    @user = User.find_by!(id: params[:user_id])
-    @post = Post.find_by!(id: params[:id], user_id: params[:user_id])
-  end
+  def index; end
+
+  def show; end
 
   def new
-    @user = User.find_by!(id: params[:user_id])
     @new_post = Post.new
   end
 
   def create
     current_user = User.find_by!(id: params[:user_id])
-    post = Post.new(author: current_user, title: params[:post][:title], text: params[:post][:text])
+    post = Post.new(post_params)
+    post.author = current_user
 
     if post.save
-      redirect_to user_posts_url
+      redirect_to user_posts_url, notice: 'Post created !'
     else
-      redirect_to new_user_post_url
+      redirect_to new_user_post_url, alert: 'Error: post not created'
     end
+  end
+
+  private
+
+  def set_vars
+    @user = User.find_by!(id: params[:user_id]) if params[:user_id]
+    @posts = Post.where(user_id: params[:user_id]) if params[:user_id]
+    @post = Post.find_by!(id: params[:id], user_id: params[:user_id]) if params[:id] && params[:user_id]
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end
