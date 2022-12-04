@@ -1,6 +1,11 @@
 <%= render partial: "shared/user", locals: {user: @user } %>
 
-<% @posts.each_with_index do |post, index| %>
+<% flash.each do |key, value| %>
+  <span class='flash_<%= key %>'><%= value %></span>
+<% end %> 
+
+<% @posts.to_enum.with_index.reverse_each do |post, index| %>
+  
     <%= render partial: "shared/post", locals: {post: post, index: index } %>  
 
     <%= render partial: "shared/comments", locals: {post: post, index: index } %>  

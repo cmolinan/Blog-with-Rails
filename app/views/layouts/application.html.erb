@@ -16,10 +16,11 @@
       <p>CARLOS MOLINA'S BLOG </p>
     </div>
     
+    <% if false %>
     <% flash.each do |key, value| %>
       <span class='flash_<%= key %>'><%= value %></span>
     <% end %> 
-
+    <% end %>
     <%= yield %>
 
     <div class='common_footer'>

@@ -9,7 +9,8 @@
 </div>
 
 
-<% @user.three_recent_posts(@user.id).each_with_index do |post, index| %>
+
+<% @user.three_recent_posts(@user.id).to_enum.with_index.reverse_each do |post, index| %>
   <%= render partial: "shared/post", locals: {post: post, index: index } %>  
 <% end %>
 

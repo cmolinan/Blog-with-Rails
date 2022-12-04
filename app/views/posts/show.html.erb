@@ -18,10 +18,14 @@
   </div>
 <% end %>
 
+<% flash.each do |key, value| %>
+  <span class='flash_<%= key %>'><%= value %></span>
+<% end %> 
+
 <%= render partial: "shared/comments", locals: {post: @post } %>
 
 <button>
   <%= link_to 'Add a Comment', new_user_post_comment_path(@user, @post) %>
 </button>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", user_posts_path(@user) %>
