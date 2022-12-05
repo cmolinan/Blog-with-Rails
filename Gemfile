@@ -58,13 +58,15 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'shoulda-matchers'
+
+  gem 'rspec-rails'
+  gem "database_cleaner"  
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'rspec-rails'
+  
   gem 'web-console'
-
   gem 'bullet'
   
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -74,8 +76,7 @@ group :development do
   # gem "spring"
 end
 
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+group :test do  
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
