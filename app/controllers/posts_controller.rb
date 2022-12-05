@@ -10,7 +10,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    current_user = User.find_by!(id: params[:user_id])
     post = Post.new(post_params)
     post.author = current_user
 
@@ -22,11 +21,11 @@ class PostsController < ApplicationController
   end
 
   private
-
+  Post.where(author: self).order(id: :asc).limit(3)
   def set_vars
     @user = User.find_by!(id: params[:user_id]) if params[:user_id]
-    @posts = Post.where(user_id: params[:user_id]) if params[:user_id]
-    @post = Post.find_by!(id: params[:id], user_id: params[:user_id]) if params[:id] && params[:user_id]
+    @posts = Post.where(user_id: params[:user_id]).order(updated_at: :desc) if params[:user_id]
+    @post = Post.find_by!(id: params[:id], user_id: params[:user_id]) if params[:id] && params[:user_id]    
   end
 
   def post_params

@@ -9,9 +9,8 @@ class User < ApplicationRecord
   # PostsCounter must be an integer greater than or equal to zero.
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  # Method that returns the 3 most recent posts for a given user.
-  def three_recent_posts(id)
-    # Post.where(user_id: id).order(created_at: :desc).limit(3)
-    Post.where(user_id: id).order(id: :asc).limit(3)
+  # Method that returns the 3 most recent posts
+  def three_recent_posts
+    posts.order(updated_at: :desc).limit(3)
   end
 end
