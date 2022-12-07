@@ -1,7 +1,10 @@
 <div class='div-comments'>
-  <% post.five_recent_comments(post.id).each do |comment| %>
-     <div class='comments'>
-        <%= User.find_by(id: comment.user_id).name %>: <%= comment.text %>      
-      </div>
-  <% end %>        
+  <% if post.comments_counter != 0  %>
+    COMMENTS:
+    <% post.five_recent_comments(post.id).each do |comment| %>
+      <div class='comments'>
+          * <%= User.find_by(id: comment.user_id).name %>: <%= comment.text %>      
+        </div>
+    <% end %>        
+  <% end %>  
 </div>

@@ -1,16 +1,8 @@
-<div class="post_header">
-  <div class="post-show-header">
-    <div class="ps-name">
-      Post by <%= @user.name %>
-    </div>
-    <div class="ps-counters">
-      Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
-    </div>
-  </div>
 
-  <p><%= @post.title %></p>
-  <p><%= @post.text %></p>  
+<div class="ps-name">
+    Post by <%= @user.name %>
 </div>
+<%= render partial: "shared/post", locals: {post: @post, index: 1 } %>  
 
 <%= form_with model: @like, url: user_post_likes_path(@user, @post) do |form| %>
   <div>
