@@ -12,11 +12,10 @@ end
 
 RSpec.describe User, type: :system do
   describe 'index page' do
-    
     before(:each) do
       @first_photo = 'https://thumbs.dreamstime.com/z/highly-detailed-fine-art-portrait-smiling-happy-real-person-space-copy-91883652.jpg'
       @second_photo = 'https://thumbs.dreamstime.com/z/happy-person-arms-raised-outstretched-69762123.jpg'
-      @third_photo = 'https://thumbs.dreamstime.com/z/happy-smiling-portrait-16652685.jpg'  
+      @third_photo = 'https://thumbs.dreamstime.com/z/happy-smiling-portrait-16652685.jpg'
       @fourth_photo = 'https://thumbs.dreamstime.com/z/smniling-man-portrait-multiracial-smiling-happy-real-person-blue-background-33713302.jpg'
       @first_user = User.create(name: 'Tom', photo: @first_photo, bio: 'Teacher from Mexico.')
       @second_user = User.create(name: 'Lilly', photo: @second_photo, bio: 'Teacher from Poland.')
@@ -30,7 +29,7 @@ RSpec.describe User, type: :system do
     end
     sleep(2)
     it 'displays the number of posts written in the pages' do
-      expect(page).to have_content("Number of posts:", count: 4)
+      expect(page).to have_content('Number of posts:', count: 4)
       expect(page).to have_content("Number of posts: #{@first_user.posts_counter}")
       expect(page).to have_content("Number of posts: #{@second_user.posts_counter}")
     end
@@ -44,6 +43,6 @@ RSpec.describe User, type: :system do
       click_link @first_user.name
       sleep(1)
       expect(current_path).to match user_path(@first_user)
-     end
+    end
   end
 end

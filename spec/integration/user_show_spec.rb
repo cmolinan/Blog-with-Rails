@@ -5,7 +5,7 @@ RSpec.describe User, type: :system do
     before(:each) do
       @first_photo = 'https://thumbs.dreamstime.com/z/highly-detailed-fine-art-portrait-smiling-happy-real-person-space-copy-91883652.jpg'
       @second_photo = 'https://thumbs.dreamstime.com/z/happy-person-arms-raised-outstretched-69762123.jpg'
-      @third_photo = 'https://thumbs.dreamstime.com/z/happy-smiling-portrait-16652685.jpg'  
+      @third_photo = 'https://thumbs.dreamstime.com/z/happy-smiling-portrait-16652685.jpg'
       @fourth_photo = 'https://thumbs.dreamstime.com/z/smniling-man-portrait-multiracial-smiling-happy-real-person-blue-background-33713302.jpg'
       @first_user = User.create(name: 'Tom', photo: @first_photo, bio: 'Teacher from Mexico.')
       @second_user = User.create(name: 'Lilly', photo: @second_photo, bio: 'Teacher from Poland.')
@@ -14,7 +14,7 @@ RSpec.describe User, type: :system do
       @first_post = Post.create(author: @first_user, title: 'Hello #1', text: 'This is my first post')
       @second_post = Post.create(author: @first_user, title: 'Hello #2', text: 'This is my second post')
       @third_post = Post.create(author: @first_user, title: 'Hello #3', text: 'This is my third post')
-      @fourth_post = Post.create(author: @first_user, title: 'Hello #4', text: 'This is my fourth post')77
+      @fourth_post = Post.create(author: @first_user, title: 'Hello #4', text: 'This is my fourth post')
       visit user_path(@first_user)
       sleep(0.5)
     end
