@@ -172,3 +172,35 @@ html {
   background-color: red;
   color: white;
 }
+
+.login_box {
+  display: flex;
+  margin: 1% auto;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+}
+
+.box {
+  margin: 5%;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  border: 1px solid black;
+  text-align: center;
+  width: 65%;
+  margin: 1% auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.btn-login {
+  width: 100%;
+}
