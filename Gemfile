@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.3'
+ruby '3.1.2'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
@@ -54,6 +54,9 @@ gem 'bootsnap', require: false
 
 gem 'ffi'
 
+# For authentication
+gem 'devise'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -66,7 +69,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
 
-  gem 'bullet'
+  # gem 'bullet'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]

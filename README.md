@@ -103,21 +103,37 @@ Install this project with the steps below:
 
 - After cloning type `cd Blog-with-Rails` to access the project on the terminal.
 - Run `bundle install` to install all the required dependancies.
+- Create Database with `rails db:create`
+- Migrate Database with `rails db:migrate`
+- Populate data with `rails db:seed`
 
 ### Usage
 
 To run the project, execute the following command:
 
 - Run `rails s` to start a development server.
+- Use any of this users to log-in:
+    - e-mail:  `tom@m.com` /  password: `666666`
+    - e-mail:  `lilly@m.com` / password: `666666`
+    - e-mail:  `fred@m.com` / password: `666666`
+    - e-mail:  `simon@m.com` /  password: `666666`
+
+
 
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
-### 👤 **Author**
+👤 **Carlos Molina**
 
-- GitHub: [Carlos Molina](https://github.com/cmolinan)
-- LinkedIn: [Carlos Molina](https://www.linkedin.com/in/carlosmolinan)
+- GitHub: [@cmolinan](https://github.com/cmolinan)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/carlosmolinan/)
+
+👤 **Neeraj Bhardwaj**
+
+- GitHub: [@Neeraj-Bhardwaj](https://github.com/rebel216)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/neerajbhardwaj216/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

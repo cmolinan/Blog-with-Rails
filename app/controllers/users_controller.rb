@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def set_vars
     @user = User.find(params[:id]) if params[:id]
-    @posts = Post.where(user_id: @user) if @user
+    @posts = Post.includes([:author]).where(user_id: @user) if @user
     @users = User.all.order(created_at: :asc)
   end
 end

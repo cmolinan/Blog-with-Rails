@@ -1,10 +1,14 @@
 <div class="post_header">
-  <div class="ps-name">
-    <%= post.created_at.localtime.to_fs(:short) %>    
-  </div>  
-  <b><%= post.title %></b>
-  <p><%= post.text %></p>
-  <div class="ps-counters1">
-    Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
-  </div>
+  
+    <div class="ps-name">
+    <%= link_to user_post_path(user_id: post.author, id: post.id) do %>
+      <%= post.created_at.localtime.to_fs(:short) %>    
+    <% end %>
+    </div>  
+    <b><%= post.title %></b>
+    <p><%= post.text %></p>
+    <div class="ps-counters1">
+      Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+    </div>
+  
 </div>

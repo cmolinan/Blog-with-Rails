@@ -14,7 +14,6 @@ class CommentsController < ApplicationController
     comment.post = @post
 
     if comment.save
-      # debugger
       # redirect_to user_posts_url, notice: 'Comment created !'
       redirect_to user_post_url(@user, @post), notice: 'Comment created !'
     else
