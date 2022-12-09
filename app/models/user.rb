@@ -17,6 +17,14 @@ class User < ApplicationRecord
   # PostsCounter must be an integer greater than or equal to zero.
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
+  # User::Roles
+  # The available roles
+  Roles = [ :admin , :default ]
+
+  def is?( requested_role )
+    self.role == requested_role.to_s
+  end
+  
   # Method that returns the 3 most recent posts
   def three_recent_posts
     posts.order(updated_at: :desc).limit(3)

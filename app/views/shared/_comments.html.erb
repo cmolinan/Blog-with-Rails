@@ -7,7 +7,7 @@
       </div>
       
       <% if can? :destroy, comment %>
-        <%= button_to "Delete Comment", user_post_comment_path(@user, @post, comment), method: :delete  %>
+        <%= button_to "Delete Comment", user_post_comment_path(@user, post, comment), method: :delete  %>
       <% end %>
 
     <% end %>        
