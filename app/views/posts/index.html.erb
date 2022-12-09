@@ -13,7 +13,10 @@
 
 <div class='user_button'>
   <button>
-    <%= link_to 'Pagination', user_post_path(@user, @posts[0]) %>
+    <%= link_to "See all users", users_path %>
+  </button>
+  <button>
+    <%= link_to "Add a post",new_user_post_path(@user) %>
   </button>
 </div>
 

@@ -13,8 +13,7 @@ class CommentsController < ApplicationController
     comment.author = current_user
     comment.post = @post
 
-    if comment.save
-      # debugger
+    if comment.save      
       # redirect_to user_posts_url, notice: 'Comment created !'
       redirect_to user_post_url(@user, @post), notice: 'Comment created !'
     else
