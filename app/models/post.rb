@@ -11,6 +11,7 @@ class Post < ApplicationRecord
   validates :comments_counter, :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   after_save :update_post_counter
+  # after_destroy :decrement !!! update_posts_counter
 
   def update_post_counter
     author.increment!(:posts_counter)
