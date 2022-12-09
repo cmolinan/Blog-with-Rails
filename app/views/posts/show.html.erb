@@ -20,4 +20,8 @@
   <%= link_to 'Add a Comment', new_user_post_comment_path(@user, @post) %>
 </button>
 
+<% if can? :destroy, @post %>
+  <%= button_to "Delete Post", user_post_path, method: :delete %>
+<% end %>
+
 <%= link_to "Back to Posts", user_posts_path(@user) %>
