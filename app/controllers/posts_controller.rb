@@ -20,6 +20,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    if post.destroy
+      flash[:success] = 'Post deleted !'
+    else
+      flash[:error] = 'Error: Post not deleted'
+    end
+    redirect_to user_posts_url
+  end
+
   private
 
   Post.where(author: self).order(id: :asc).limit(3)
