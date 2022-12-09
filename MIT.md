@@ -1,4 +1,4 @@
-## Copyright 2022, CARLOS MOLINA
+## Copyright 2022, CARLOS MOLINA & NEERAJ BHARDWAJ
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this REPOSITORY and associated documentation files, to deal in the REPOSITORY without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the REPOSITORY, and to permit persons to whom the REPOSITORY is furnished to do so, subject to the following conditions:
 
