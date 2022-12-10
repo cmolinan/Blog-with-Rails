@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   # Title must not be blank and must not exceed 250 characters.
   validates :title, presence: true, length: { minimum: 1, maximum: 250 }
@@ -21,7 +21,7 @@ class Post < ApplicationRecord
   def decrement_posts_counter
     author.decrement!(:posts_counter)
   end
-  
+
   # method which returns the 5 most recent comments for a given post.
   def five_recent_comments(_post_num)
     comments.order(updated_at: :desc).limit(5)
