@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 authors = User.create!([
-  {name: 'Tom Gibb', photo:'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico', email: 'tom@m.com', password: '666666', password_confirmation: '666666', confirmed_at: '2022-12-20'},
+  {name: 'Tom Gibb', photo:'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico', email: 'tom@m.com', password: '666666', password_confirmation: '666666', confirmed_at: '2022-12-20', role: 'admin'},
   {name: 'Lilly Chen', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from China', email: 'lilly@m.com', password: '666666', password_confirmation: '666666', confirmed_at: '2022-12-20'},
   {name: 'Fred Sullivan', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Developer from USA', email: 'fred@m.com', password: '666666', password_confirmation: '666666', confirmed_at: '2022-12-20'},
   {name: 'Simon Johnson', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Engineer from INdia', email: 'simon@m.com', password: '666666', password_confirmation: '666666', confirmed_at: '2022-12-20'},

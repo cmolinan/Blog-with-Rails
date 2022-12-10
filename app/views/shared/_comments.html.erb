@@ -4,7 +4,12 @@
     <% post.five_recent_comments(post.id).each do |comment| %>
       <div class='comments'>
           * <%= User.find_by(id: comment.user_id).name %>: <%= comment.text %>      
-        </div>
+      </div>
+      
+      <% if can? :destroy, comment %>
+        <%= button_to "Delete Comment", user_post_comment_path(@user, post, comment), method: :delete  %>
+      <% end %>
+
     <% end %>        
   <% end %>  
 </div>

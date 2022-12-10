@@ -55,6 +55,7 @@ gem 'bootsnap', require: false
 gem 'ffi'
 
 # For authentication
+gem 'cancancan'
 gem 'devise'
 
 group :development, :test do
