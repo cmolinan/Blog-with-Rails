@@ -132,6 +132,7 @@ To run the project, execute the following command:
 👤 **Neeraj Bhardwaj**
 
 - GitHub: [@Neeraj-Bhardwaj](https://github.com/rebel216)
+- Twitter: [@Neeraj-Bhardwaj](https://twitter.com/rebel216)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/neerajbhardwaj216/)
 
 
