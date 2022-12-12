@@ -15,9 +15,13 @@
   <button>
     <%= link_to "See all users", users_path %>
   </button>
-  <button>
-    <%= link_to "Add a post",new_user_post_path(@user) %>
-  </button>
+
+  <% if can? :manage, @post %>
+    <button>
+      <%= link_to "Add a post",new_user_post_path(@user) %>
+    </button>
+  <% end %>
+  
 </div>
 
 <%= link_to 'Back' , @user %>

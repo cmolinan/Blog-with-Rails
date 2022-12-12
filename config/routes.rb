@@ -9,4 +9,15 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :v1 do
+      post 'users/login' => 'users#login'
+      post 'users/signup' => 'users#signup'
+      get  'users/:user_id/posts' => 'posts#users_posts'
+      get  'users/:user_id/posts/:post_id/comments' => 'posts#list_comments'
+      post 'users/posts/:post_id/addcomment' => 'posts#add_comment'
+      resources :users, only: [:index, :show]
+    end
+  end
+
 end
